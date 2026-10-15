@@ -37,7 +37,7 @@ public class DBService {
 			return orte;
 		}
 		catch (SQLException sqlEx) {
-			
+			System.out.println("Fehler: " + sqlEx.getMessage());
 		}
 		
 		return null;

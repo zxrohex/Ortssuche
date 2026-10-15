@@ -49,12 +49,18 @@ public class Programm {
 			}
 		}
 		else if (functionSelection == 2) {
+			in.nextLine();
+			
 			System.out.println();
+
+			System.out.print("PLZ-Anfang eingeben: ");
 			
-			System.out.print("PLZ eingeben: ");
-			
-			String plz = in.nextLine();
-			
+			String plz = in.nextLine().trim();
+
+			orte.stream()
+			.filter(ort -> String.format(java.util.Locale.ROOT, "%05d", ort.getPlz())
+					.startsWith(plz))
+			.forEach(System.out::println);
 		}
 		
 		
